@@ -310,7 +310,7 @@ print("请输入文件格式（1或0），若为1，则读取文件格式，若�
 x=input()
 
 if x=='1':
-    print(r"请输入文件名(文件以‘#’结束：如：'E:\studyclass3first\Compilers_Principles\code\dist\token.txt'")
+    print(r"请输入文件名(文件以‘#’结束：如：'E:\studyclass3first\Compilers_Principles\code\dist\x.txt'")
     path = input()
     files= open(path)
     st=files.read()
@@ -323,13 +323,18 @@ else :
             break
         st+='\n'
 ls, dict_namel, ls_consl, ls_false = informationword(st)
-path_token='./token.txt'
-path_consl='./consl.txt'
-path_namel='./namel.txt'
-path_token=input("请输入保存token表路径：")
-path_consl=input("请输入保存consl表路径：")
-path_namel=input("请输入保存namel表路径：")
 
+
+
+path_token=input("请输入保存token表路径,默认:./token.txt：")
+path_consl=input("请输入保存consl表路径,默认:./consl.txt：")
+path_namel=input("请输入保存namel表路径,默认:./namel.txt：")
+if path_token=='':
+    path_token = './token.txt'
+if path_consl=='':
+    path_consl = './consl.txt'
+if path_namel=='':
+    path_namel='./namel.txt'
 print("token表含义：单词，编码类，语义（若为consl,则表示索引，数值。若为namel,则为标识符，索引） ")
 print("consl表含义：索引，数值")
 print("namel表含义：标识符，数值")
