@@ -91,7 +91,7 @@ def informationword(st):
                     ls.append(InformationGrammar("浮点数", 12, st[head:tail], consl_index))  # 浮点数
 
                 else:
-                    index += 1
+                    # index += 1#可能得注释
                     tail = index
                     ls.append(InformationGrammar("整数", 12, st[head:tail], consl_index))  # 整数
 
@@ -312,6 +312,8 @@ x=input()
 if x=='1':
     print(r"请输入文件名(文件以‘#’结束：如：'E:\studyclass3first\Compilers_Principles\code\dist\x.txt'")
     path = input()
+    if path == '':
+        path = r'E:\studyclass3first\Compilers_Principles\code\dist\\x.txt'
     files= open(path)
     st=files.read()
     pass

@@ -1,5 +1,5 @@
 KESI = '$'
-TERMINATOR = '@'
+TERMINATOR = '#'
 
 def Vt_Vn(grammers):
     vn = set()
@@ -142,17 +142,37 @@ def Get_select(Select, ls, rules1, VT0, VN0):
 #
 # rules3={"E":["E+T","T"],"T":['T*F','F'],'F':['i','(E)']}
 # rules4={"E":["Te"],"e":["+Te",KESI],"T":["Ft"],'t':['*Ft',KESI],'F':['i','(E)']}
+# rules5 = {
+#                         'z': ['Z'],
+#                         # # 语句分为执行语句和声明语句
+#                         'Z': ['S'],
+#                         # 执行语句
+#                         'S': ['B;'], 'B': ['I=E', 'E'],
+#                         'E': ['E+T', 'E-T', 'T'], 'T': ['T*F', 'T/F', 'F'], 'F': ['I', 'n', '(E)'],
+#                         # 申明语句
+#                         # 'P': ['QK;'], 'K': ['I=n', 'I'], 'Q': ['c', 'f', 'k']
+# }
+# vt, vn = Vt_Vn(rules5)
+# s = Follow('E', rules5, vt, vn)
+# print(s)
 
 
-# vt, vn = Vt_Vn(rules0)
-# follow_set = Get_follow(Follow, vn, rules0, vt, vn)
-# vt, vn = Vt_Vn(rules1)
-# follow_set = Get_follow(Follow, vn, rules1, vt, vn)
-# vt, vn = Vt_Vn(rules2)
-# follow_set = Get_follow(Follow, vn, rules2, vt, vn)
-# vt, vn = Vt_Vn(rules3)
-# follow_set = Get_follow(Follow, vn, rules3, vt, vn)
-# vt, vn = Vt_Vn(rules4)
+
+
+
+
+
+
+
+
+# # vt, vn = Vt_Vn(rules0)
+# # follow_set = Get_follow(Follow, vn, rules0, vt, vn)
+# # vt, vn = Vt_Vn(rules1)
+# # follow_set = Get_follow(Follow, vn, rules1, vt, vn)
+# # vt, vn = Vt_Vn(rules2)
+# # follow_set = Get_follow(Follow, vn, rules2, vt, vn)
+#
+# pass
 
 # Follow(t)={'@', '+'}
 # Follow(F)={'@', '*'}
